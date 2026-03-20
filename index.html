@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raghav Tandon, Ph.D.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:       #1a1a2e;
+      --muted:     #5a5a72;
+      --accent:    #2d6a4f;
+      --accent2:   #74c69d;
+      --paper:     #faf9f6;
+      --white:     #ffffff;
+      --rule:      #e0ddd6;
+      --tag-bg:    #e8f5ee;
+      --tag-text:  #1b4332;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.7; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(250,249,246,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; padding: 0 6vw; height: 56px; }
+    .nav-brand { font-family: 'EB Garamond', serif; font-size: 1.15rem; font-weight: 500; color: var(--ink); text-decoration: none; letter-spacing: 0.01em; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .hero { display: grid; grid-template-columns: 1fr 340px; gap: 60px; align-items: center; padding: 80px 6vw 70px; max-width: 1100px; margin: 0 auto; }
+    .hero-eyebrow { display: inline-block; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); background: var(--tag-bg); padding: 4px 10px; border-radius: 3px; margin-bottom: 18px; }
+    h1 { font-family: 'EB Garamond', serif; font-size: clamp(2.4rem, 4vw, 3.4rem); font-weight: 500; line-height: 1.15; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 16px; }
+    .hero-tagline { font-size: 1rem; color: var(--muted); max-width: 520px; line-height: 1.75; margin-bottom: 28px; }
+    .hero-positions { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+    .position-item { display: flex; align-items: flex-start; gap: 12px; }
+    .position-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); margin-top: 8px; flex-shrink: 0; }
+    .position-item .role { font-weight: 500; color: var(--ink); font-size: 0.92rem; }
+    .position-item .org  { font-size: 0.82rem; color: var(--muted); }
+    .soon-badge { display: inline-block; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; background: var(--accent); color: #fff; padding: 2px 7px; border-radius: 2px; margin-left: 8px; vertical-align: middle; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn { display: inline-flex; align-items: center; gap: 7px; text-decoration: none; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em; padding: 9px 18px; border-radius: 4px; transition: all 0.2s; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #1b4332; }
+    .btn-outline { border: 1.5px solid var(--rule); color: var(--muted); background: transparent; }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .hero-card { background: var(--white); border: 1px solid var(--rule); border-radius: 10px; padding: 32px 26px; text-align: center; box-shadow: 0 4px 24px rgba(0,0,0,0.05); }
+    .avatar { width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #52b788); margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; font-family: 'EB Garamond', serif; font-size: 2.2rem; color: #fff; font-weight: 500; }
+    .card-name { font-family: 'EB Garamond', serif; font-size: 1.2rem; font-weight: 500; margin-bottom: 4px; }
+    .card-inst { font-size: 0.78rem; color: var(--muted); line-height: 1.5; margin-bottom: 20px; }
+    .card-divider { border: none; border-top: 1px solid var(--rule); margin: 16px 0; }
+    .card-stat-row { display: flex; justify-content: space-around; }
+    .card-stat { text-align: center; }
+    .card-stat .num { font-family: 'EB Garamond', serif; font-size: 1.6rem; font-weight: 500; color: var(--accent); line-height: 1; }
+    .card-stat .lbl { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    .card-contact { margin-top: 18px; }
+    .card-contact a { display: block; font-size: 0.76rem; color: var(--muted); text-decoration: none; padding: 3px 0; transition: color 0.2s; }
+    .card-contact a:hover { color: var(--accent); }
+    section { padding: 64px 6vw; max-width: 1100px; margin: 0 auto; }
+    .section-divider { border: none; border-top: 1px solid var(--rule); margin: 0 6vw; }
+    .section-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+    h2 { font-family: 'EB Garamond', serif; font-size: 2rem; font-weight: 500; color: var(--ink); margin-bottom: 32px; line-height: 1.2; }
+    .interests-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+    .interest-card { background: var(--white); border: 1px solid var(--rule); border-radius: 8px; padding: 22px 20px; transition: border-color 0.2s, box-shadow 0.2s; }
+    .interest-card:hover { border-color: var(--accent2); box-shadow: 0 4px 18px rgba(45,106,79,0.08); }
+    .interest-icon { font-size: 1.6rem; margin-bottom: 10px; }
+    .interest-title { font-weight: 500; color: var(--ink); margin-bottom: 6px; font-size: 0.92rem; }
+    .interest-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+    .pub-list { display: flex; flex-direction: column; gap: 18px; }
+    .pub-item { background: var(--white); border: 1px solid var(--rule); border-radius: 8px; padding: 20px 22px; transition: box-shadow 0.2s; }
+    .pub-item:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.06); }
+    .pub-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; align-items: center; }
+    .pub-tag { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 3px; }
+    .pub-tag.journal  { background: var(--tag-bg); color: var(--tag-text); }
+    .pub-tag.conf     { background: #e8f0fb; color: #1a3a6e; }
+    .pub-tag.preprint { background: #fef3c7; color: #78350f; }
+    .pub-year { font-size: 0.76rem; color: var(--muted); }
+    .pub-title { font-family: 'EB Garamond', serif; font-size: 1.02rem; font-weight: 500; color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
+    .pub-authors { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin-bottom: 4px; }
+    .pub-venue { font-size: 0.8rem; color: var(--muted); font-style: italic; }
+    .pub-venue strong { font-style: normal; font-weight: 500; color: var(--ink); }
+    .me { font-weight: 600; color: var(--ink); }
+    .edu-list { display: flex; flex-direction: column; gap: 0; }
+    .edu-item { display: grid; grid-template-columns: 100px 1fr; gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--rule); }
+    .edu-item:last-child { border-bottom: none; }
+    .edu-year { font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--muted); padding-top: 2px; }
+    .edu-degree { font-weight: 500; color: var(--ink); margin-bottom: 2px; font-size: 0.93rem; }
+    .edu-inst { font-size: 0.83rem; color: var(--muted); }
+    .awards-list { display: flex; flex-direction: column; gap: 12px; }
+    .award-item { display: flex; gap: 14px; align-items: flex-start; padding: 14px 18px; background: var(--white); border: 1px solid var(--rule); border-radius: 6px; }
+    .award-year { font-family: 'EB Garamond', serif; font-size: 0.95rem; color: var(--accent); font-weight: 500; min-width: 38px; }
+    .award-name { font-size: 0.87rem; color: var(--ink); line-height: 1.5; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .contact-blurb { font-size: 0.95rem; color: var(--muted); line-height: 1.8; margin-bottom: 24px; }
+    .contact-detail { display: flex; flex-direction: column; gap: 10px; }
+    .contact-row { display: flex; align-items: center; gap: 12px; }
+    .contact-row .icon { font-size: 1rem; width: 20px; text-align: center; }
+    .contact-row a { font-size: 0.87rem; color: var(--ink); text-decoration: none; }
+    .contact-row a:hover { color: var(--accent); text-decoration: underline; }
+    .contact-right { background: var(--white); border: 1px solid var(--rule); border-radius: 8px; padding: 28px 24px; }
+    .contact-right h3 { font-family: 'EB Garamond', serif; font-size: 1.3rem; margin-bottom: 6px; }
+    .contact-right p { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
+    .contact-right .affiliations { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
+    .affil { display: flex; align-items: center; gap: 10px; font-size: 0.82rem; color: var(--ink); }
+    .affil-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+    footer { text-align: center; padding: 32px 6vw; font-size: 0.78rem; color: var(--muted); border-top: 1px solid var(--rule); }
+    @media (max-width: 780px) { .hero { grid-template-columns: 1fr; gap: 40px; padding: 50px 5vw; } .hero-card { display: none; } .contact-grid { grid-template-columns: 1fr; } .edu-item { grid-template-columns: 80px 1fr; gap: 14px; } }
+    @media (max-width: 540px) { .nav-links { display: none; } h1 { font-size: 2.2rem; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">Raghav Tandon</a>
+  <ul class="nav-links">
+    <li><a href="#research">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Biomedical Data Science &amp; AI in Health</div>
+    <h1>Raghav Tandon, Ph.D.</h1>
+    <p class="hero-tagline">Developing data-driven methods at the intersection of environmental epidemiology, neurodegenerative disease, and population health—bridging large-scale administrative data with machine learning to uncover how exposures shape human health and disease progression.</p>
+    <div class="hero-positions">
+      <div class="position-item">
+        <div class="position-dot"></div>
+        <div>
+          <div class="role">Postdoctoral Research Fellow</div>
+          <div class="org">Harvard Medical School &middot; PI: Dr. Chirag J. Patel &middot; Boston, MA</div>
+        </div>
+      </div>
+      <div class="position-item">
+        <div class="position-dot" style="background:#74c69d;"></div>
+        <div>
+          <div class="role">Assistant Professor <span class="soon-badge">Joining Summer 2026</span></div>
+          <div class="org">Koita Centre for Digital Health (KCDH), IIT Bombay &middot; Mumbai, India</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-links">
+      <a id="email-hero" href="#" class="btn btn-primary">&#9993; Get in Touch</a>
+      <a href="https://scholar.google.com/citations?user=LyZqPI4AAAAJ&hl=en" target="_blank" class="btn btn-outline">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/raghav-tandon-ph-d-429206104/" target="_blank" class="btn btn-outline">LinkedIn</a>
+      <a href="https://github.com" target="_blank" class="btn btn-outline">GitHub</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="avatar">RT</div>
+    <div class="card-name">Raghav Tandon, Ph.D.</div>
+    <div class="card-inst">Harvard Medical School<br>IIT Bombay (from Summer 2026)</div>
+    <hr class="card-divider">
+    <div class="card-stat-row">
+      <div class="card-stat"><div class="num">11</div><div class="lbl">Papers</div></div>
+      <div class="card-stat"><div class="num">5+</div><div class="lbl">In Review</div></div>
+      <div class="card-stat"><div class="num">10+</div><div class="lbl">Abstracts</div></div>
+    </div>
+    <hr class="card-divider">
+    <div class="card-contact">
+      <a id="email-card" href="#">&#128231; Loading...</a>
+      <a href="tel:+16784369863">&#128222; +1-678-436-9863</a>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<section id="research">
+  <div class="section-label">Focus Areas</div>
+  <h2>Research Interests</h2>
+  <div class="interests-grid">
+    <div class="interest-card">
+      <div class="interest-icon">&#127777;&#65039;</div>
+      <div class="interest-title">Environmental Epidemiology</div>
+      <div class="interest-desc">Mortality and morbidity outcomes from extreme weather exposures using large-scale Medicare data and distributed lag non-linear models.</div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">&#129504;</div>
+      <div class="interest-title">Neurodegenerative Disease</div>
+      <div class="interest-desc">Disease progression modeling for Alzheimer's disease and ADRD—integrating clinical, proteomic, and imaging biomarkers with event-based models.</div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">&#9877;&#65039;</div>
+      <div class="interest-title">AI/ML in Healthcare</div>
+      <div class="interest-desc">Scalable machine learning methods for biomedical heterogeneity, subtype discovery, survival analysis, and causal inference in clinical datasets.</div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">&#129516;</div>
+      <div class="interest-title">Multi-Omics &amp; Proteomics</div>
+      <div class="interest-desc">Statistical harmonization and analysis of high-dimensional proteomics and genomics data for biomarker discovery in aging and neurological disease.</div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">&#128202;</div>
+      <div class="interest-title">Population Health &amp; Exposome</div>
+      <div class="interest-desc">Leveraging CMS Medicare and other large administrative databases to study how environmental and social exposures interact over the lifecourse.</div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">&#127973;</div>
+      <div class="interest-title">Digital Health (India)</div>
+      <div class="interest-desc">Building India-focused research on neurodegenerative disease, climate-health interactions, and digital health infrastructure at IIT Bombay's KCDH.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section id="publications">
+  <div class="section-label">Peer-Reviewed Work</div>
+  <h2>Selected Publications</h2>
+  <div class="pub-list">
+    <div class="pub-item">
+      <div class="pub-meta"><span class="pub-tag preprint">Under Review</span><span class="pub-year">2025</span></div>
+      <div class="pub-title">Asymmetric Impacts of Extreme Weather: Cold Events Disrupt More Than Heat</div>
+      <div class="pub-authors"><span class="me">Tandon, R.</span>, Fard, P., Estiri, H., &amp; Patel, C.</div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-meta"><span class="pub-tag journal">Journal Article</span><span class="pub-year">2026</span></div>
+      <div class="pub-title">Artificial Intelligence-Based Analysis of Central Nervous System Vasculopathy in Pediatric Sickle Cell Anemia</div>
+      <div class="pub-authors">Fay, M.E., <span class="me">Tandon, R.</span>, Latham, T., Lee, A.J., et al.</div>
+      <div class="pub-venue"><strong>American Journal of Hematology</strong></div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-meta"><span class="pub-tag journal">Journal Article</span><span class="pub-year">2025</span></div>
+      <div class="pub-title">Comprehensive Anatomical Staging Predicts Clinical Progression in Mild Cognitive Impairment: A Data-Driven Approach</div>
+      <div class="pub-authors"><span class="me">Tandon, R.</span>, Mei, Y., Lah, J.J. &amp; Mitchell, C.S.</div>
+      <div class="pub-venue"><strong>International Journal of Molecular Sciences</strong>, 26(12), p.5514</div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-meta"><span class="pub-tag journal">Journal Article</span><span class="pub-year">2025</span></div>
+      <div class="pub-title">Stratifying Risk of Alzheimer's Disease in Healthy Middle-Aged Individuals with Machine Learning</div>
+      <div class="pub-authors"><span class="me">Tandon, R.</span>, Zhao, L., Watson, C.M., et al.</div>
+      <div class="pub-venue"><strong>Brain Communications</strong>, p.fcaf121</div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-meta"><span class="pub-tag journal">Journal Article</span><span class="pub-year">2023</span></div>
+      <div class="pub-title">Machine Learning Selection of Most Predictive Brain Proteins Suggests Role of Sugar Metabolism in Alzheimer's Disease</div>
+      <div class="pub-authors"><span class="me">Tandon, R.</span>, Levey, A.I., Lah, J.J., Seyfried, N.T. &amp; Mitchell, C.S.</div>
+      <div class="pub-venue"><strong>Journal of Alzheimer's Disease</strong>, 92(2), pp.411-424</div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-meta"><span class="pub-tag journal">Journal Article</span><span class="pub-year">2022</span></div>
+      <div class="pub-title">A Large-Scale Neural Network Training Framework for Generalized Estimation of Single-Trial Population Dynamics</div>
+      <div class="pub-authors">Keshtkaran, M.R., Sedler, A.R., Chowdhury, R.H., <span class="me">Tandon, R.</span>, et al.</div>
+      <div class="pub-venue"><strong>Nature Methods</strong>, 19(12), pp.1572-1577</div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-meta"><span class="pub-tag journal">Journal Article</span><span class="pub-year">2022</span></div>
+      <div class="pub-title">A Deep Learning Framework for Inference of Single-Trial Neural Population Dynamics from Calcium Imaging with Subframe Temporal Resolution</div>
+      <div class="pub-authors">Zhu, F., Grier, H.A., <span class="me">Tandon, R.</span>, et al.</div>
+      <div class="pub-venue"><strong>Nature Neuroscience</strong>, 25(12), pp.1724-1734</div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-meta"><span class="pub-tag conf">Conference</span><span class="pub-year">2024</span></div>
+      <div class="pub-title">s-SuStaIn: Scaling Subtype and Stage Inference via Simultaneous Clustering of Subjects and Biomarkers</div>
+      <div class="pub-authors"><span class="me">Tandon, R.</span>, Lah, J.J. &amp; Mitchell, C.S.</div>
+      <div class="pub-venue"><strong>Conference on Health, Inference, and Learning (CHIL)</strong>, PMLR, pp.461-476</div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-meta"><span class="pub-tag conf">Conference</span><span class="pub-year">2023</span></div>
+      <div class="pub-title">sEBM: Scaling Event Based Models to Predict Disease Progression via Implicit Biomarker Selection and Clustering</div>
+      <div class="pub-authors"><span class="me">Tandon, R.</span>, Kirkpatrick, A. &amp; Mitchell, C.S.</div>
+      <div class="pub-venue"><strong>IPMI 2023</strong> &middot; Springer Nature Switzerland, pp.208-221</div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section id="education">
+  <div class="section-label">Academic Training</div>
+  <h2>Education</h2>
+  <div class="edu-list">
+    <div class="edu-item">
+      <div class="edu-year">2019&ndash;2024</div>
+      <div><div class="edu-degree">Ph.D., Machine Learning</div><div class="edu-inst">Georgia Institute of Technology, Atlanta, GA &middot; Advisor: Dr. Cassie S. Mitchell &middot; GPA 3.8/4.0</div></div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-year">2017&ndash;2018</div>
+      <div><div class="edu-degree">M.S. in Analytics</div><div class="edu-inst">Georgia Institute of Technology, Atlanta, GA &middot; GPA 3.84/4.0</div></div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-year">2009&ndash;2014</div>
+      <div><div class="edu-degree">B.Tech. &amp; M.Tech., Mechanical Engineering</div><div class="edu-inst">Indian Institute of Technology Madras, Chennai &middot; GPA 8.06/10.0</div></div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section id="awards">
+  <div class="section-label">Recognition</div>
+  <h2>Honors &amp; Awards</h2>
+  <div class="awards-list">
+    <div class="award-item"><div class="award-year">2025</div><div class="award-name">Selected Participant, Summer Teaching Institute &mdash; Harvard University</div></div>
+    <div class="award-item"><div class="award-year">2024</div><div class="award-name">F.L. &ldquo;Bud&rdquo; Suddath and Frances &ldquo;Lee&rdquo; Gafford Suddath Fellowship Award, 3rd place &mdash; Georgia Tech</div></div>
+    <div class="award-item"><div class="award-year">2024</div><div class="award-name">3-Minute Thesis Finalist (Top 12 of 65) &mdash; Georgia Tech</div></div>
+    <div class="award-item"><div class="award-year">2024</div><div class="award-name">Scholarship, Bruce Weir Summer Institute in Statistical Genetics</div></div>
+    <div class="award-item"><div class="award-year">2022</div><div class="award-name">Abstract of Distinction &amp; Special Interest Group Award for Behavioral Neurology and Dementia &mdash; American Neurological Association</div></div>
+    <div class="award-item"><div class="award-year">2022</div><div class="award-name">Institute-Wide Online Teaching Assistant of the Year &mdash; Georgia Tech</div></div>
+    <div class="award-item"><div class="award-year">2014</div><div class="award-name">Raghu Ramamoorthy Prize &mdash; IIT Madras</div></div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section id="contact">
+  <div class="section-label">Connect</div>
+  <h2>Get in Touch</h2>
+  <div class="contact-grid">
+    <div>
+      <p class="contact-blurb">I welcome inquiries from prospective graduate students and postdocs interested in environmental epidemiology, AI in health, and neurodegenerative disease research &mdash; especially those keen to contribute to building digital health research capacity in India through the Koita Centre for Digital Health at IIT Bombay.</p>
+      <div class="contact-detail">
+        <div class="contact-row">
+          <span class="icon">&#9993;&#65039;</span>
+          <a id="email-contact" href="#">Loading...</a>
+        </div>
+        <div class="contact-row"><span class="icon">&#128279;</span><a href="https://scholar.google.com/citations?user=LyZqPI4AAAAJ&hl=en" target="_blank">Google Scholar</a></div>
+        <div class="contact-row"><span class="icon">&#128188;</span><a href="https://www.linkedin.com/in/raghav-tandon-ph-d-429206104/" target="_blank">LinkedIn</a></div>
+        <div class="contact-row"><span class="icon">&#128025;</span><a href="https://github.com" target="_blank">GitHub</a></div>
+      </div>
+    </div>
+    <div class="contact-right">
+      <h3>Affiliations</h3>
+      <p>Current and incoming academic homes.</p>
+      <div class="affiliations">
+        <div class="affil"><div class="affil-dot"></div>Harvard Medical School &mdash; Patel Lab, Boston, MA</div>
+        <div class="affil"><div class="affil-dot"></div>Koita Centre for Digital Health, IIT Bombay (from Summer 2026)</div>
+        <div class="affil" style="opacity:0.6;"><div class="affil-dot" style="background:#ccc;"></div>Georgia Institute of Technology (former)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Raghav Tandon &middot; Built with GitHub Pages &middot;
+  <a id="email-footer" href="#" style="color: inherit;">contact</a>
+</footer>
+
+<script>
+  // Email assembled at runtime — never written as a plain string in the source
+  (function() {
+    var u = 'raghav_tandon';
+    var d = 'hms' + '.' + 'harvard' + '.' + 'edu';
+    var addr = u + '@' + d;
+    var href = 'mai' + 'lto:' + addr;
+
+    var hero    = document.getElementById('email-hero');
+    var card    = document.getElementById('email-card');
+    var contact = document.getElementById('email-contact');
+    var footer  = document.getElementById('email-footer');
+
+    if (hero)    { hero.href = href; }
+    if (card)    { card.href = href; card.textContent = '\uD83D\uDCE7 ' + addr; }
+    if (contact) { contact.href = href; contact.textContent = addr; }
+    if (footer)  { footer.href = href; footer.textContent = addr; }
+  })();
+</script>
+
+</body>
+</html>
