@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research — Raghav Tandon, Ph.D.</title>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VVLF1RV7R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8VVLF1RV7R');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:       #1a1a2e;
+      --muted:     #5a5a72;
+      --accent:    #2d6a4f;
+      --accent2:   #74c69d;
+      --paper:     #faf9f6;
+      --white:     #ffffff;
+      --rule:      #e0ddd6;
+      --tag-bg:    #e8f5ee;
+      --tag-text:  #1b4332;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.7; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(250,249,246,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; padding: 0 6vw; height: 56px; }
+    .nav-brand { font-family: 'EB Garamond', serif; font-size: 1.15rem; font-weight: 500; color: var(--ink); text-decoration: none; letter-spacing: 0.01em; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links a.active { color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
+    section { padding: 64px 6vw; max-width: 1100px; margin: 0 auto; }
+    .section-divider { border: none; border-top: 1px solid var(--rule); margin: 0 6vw; }
+    .section-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+    h2 { font-family: 'EB Garamond', serif; font-size: 2rem; font-weight: 500; color: var(--ink); margin-bottom: 32px; line-height: 1.2; }
+    .interests-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+    .interest-card { background: var(--white); border: 1px solid var(--rule); border-radius: 8px; padding: 22px 20px; transition: border-color 0.2s, box-shadow 0.2s; }
+    .interest-card:hover { border-color: var(--accent2); box-shadow: 0 4px 18px rgba(45,106,79,0.08); }
+    .interest-icon { font-size: 1.6rem; margin-bottom: 10px; }
+    .interest-title { font-weight: 500; color: var(--ink); margin-bottom: 6px; font-size: 0.92rem; }
+    .interest-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+    .edu-list { display: flex; flex-direction: column; gap: 0; }
+    .edu-item { display: grid; grid-template-columns: 100px 1fr; gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--rule); }
+    .edu-item:last-child { border-bottom: none; }
+    .edu-year { font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--muted); padding-top: 2px; }
+    .edu-degree { font-weight: 500; color: var(--ink); margin-bottom: 2px; font-size: 0.93rem; }
+    .edu-inst { font-size: 0.83rem; color: var(--muted); }
+    footer { text-align: center; padding: 32px 6vw; font-size: 0.78rem; color: var(--muted); border-top: 1px solid var(--rule); }
+    @media (max-width: 540px) { .nav-links { display: none; } .edu-item { grid-template-columns: 80px 1fr; gap: 14px; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Raghav Tandon</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="research.html" class="active">Research</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="positions.html">Positions</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section>
+  <div class="section-label">Focus Areas</div>
+  <h2>Research Interests</h2>
+  <div class="interests-grid">
+    <div class="interest-card">
+      <div class="interest-icon">&#127777;&#65039;</div>
+      <div class="interest-title">Environmental Epidemiology</div>
+      <div class="interest-desc">Mortality and morbidity outcomes from extreme weather exposures using large-scale Medicare data and distributed lag non-linear models.</div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">&#129504;</div>
+      <div class="interest-title">Neurodegenerative Disease</div>
+      <div class="interest-desc">Disease progression modeling for Alzheimer's disease and ADRD—integrating clinical, proteomic, and imaging biomarkers with event-based models.</div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">&#9877;&#65039;</div>
+      <div class="interest-title">AI/ML in Healthcare</div>
+      <div class="interest-desc">Scalable machine learning methods for biomedical heterogeneity, subtype discovery, survival analysis, and causal inference in clinical datasets.</div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">&#129516;</div>
+      <div class="interest-title">Multi-Omics &amp; Proteomics</div>
+      <div class="interest-desc">Statistical harmonization and analysis of high-dimensional proteomics and genomics data for biomarker discovery in aging and neurological disease.</div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">&#128202;</div>
+      <div class="interest-title">Population Health &amp; Exposome</div>
+      <div class="interest-desc">Leveraging CMS Medicare and other large administrative databases to study how environmental and social exposures interact over the lifecourse.</div>
+    </div>
+    <div class="interest-card">
+      <div class="interest-icon">&#127973;</div>
+      <div class="interest-title">Digital Health (India)</div>
+      <div class="interest-desc">Building India-focused research on neurodegenerative disease, climate-health interactions, and digital health infrastructure at IIT Bombay's KCDH.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section>
+  <div class="section-label">Academic Training</div>
+  <h2>Education</h2>
+  <div class="edu-list">
+    <div class="edu-item">
+      <div class="edu-year">2019&ndash;2024</div>
+      <div><div class="edu-degree">Ph.D., Machine Learning</div><div class="edu-inst">Georgia Institute of Technology, Atlanta, GA &middot; Advisor: Dr. Cassie S. Mitchell</div></div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-year">2017&ndash;2018</div>
+      <div><div class="edu-degree">M.S. in Analytics</div><div class="edu-inst">Georgia Institute of Technology, Atlanta, GA, USA</div></div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-year">2009&ndash;2014</div>
+      <div><div class="edu-degree">B.Tech. &amp; M.Tech., Mechanical Engineering</div><div class="edu-inst">Indian Institute of Technology Madras, Chennai</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Raghav Tandon &middot; Built with GitHub Pages &middot;
+  <a id="email-footer" href="#" style="color: inherit;">contact</a>
+</footer>
+
+<script>
+  (function() {
+    var u = 'raghav_tandon';
+    var d = 'hms' + '.' + 'harvard' + '.' + 'edu';
+    var addr = u + '@' + d;
+    var href = 'mai' + 'lto:' + addr;
+    var footer = document.getElementById('email-footer');
+    if (footer) { footer.href = href; footer.textContent = addr; }
+  })();
+</script>
+
+</body>
+</html>
